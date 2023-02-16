@@ -85,7 +85,8 @@ describe("Post User Login", function(){
             email : "peter@klaven"
         })
         expect(response.status).to.eql(400)
-        console.log(response.error.text) // menampilkan pesan eror
+        expect(response.body.error).to.eql('Missing password')   
+        // console.log(response.error.text) // menampilkan pesan eror
     })
 
 })
