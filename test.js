@@ -67,3 +67,25 @@ describe("Put User Update", function()
         expect(response.body.job).to.eql('zion resident')
     })
 })
+
+describe("Post User Login", function(){
+    it("Success Login", async function(){
+        const response = await request
+        .post("/api/login")
+        .send({
+            email: "eve.holt@reqres.in",
+            job: "cityslicka"
+        });
+        expect(200)
+    })
+    it("Failed Login", async function(){
+        const response = await request
+        .post("/api/login") // http method
+        .send({
+            email : "peter@klaven"
+        })
+        expect(response.status).to.eql(400)
+        console.log(response.error.text) // menampilkan pesan eror
+    })
+
+})
