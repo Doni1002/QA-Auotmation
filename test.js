@@ -3,10 +3,8 @@ const { assert } = require("chai");
 const request = require ("supertest")("https://reqres.in")
 const expect = require ("chai").expect;
 
-describe("Post User Regres", function()
-{
-    it("Success Register", async function()
-    {
+describe("Post User Regres", function(){
+    it("Success Register", async function(){
         const response = await request
         .post("/api/users")
         .send({
@@ -18,10 +16,8 @@ describe("Post User Regres", function()
     })
 })
 
-describe("Get All Users", function()
-{
-    it("Success Get All Users", async function()
-    {
+describe("Get All Users", function(){
+    it("Success Get All Users", async function(){
         const response = request
         .get("/api/users?page=2")
        
@@ -29,10 +25,8 @@ describe("Get All Users", function()
     })
 })
 
-describe("Get Single User", function()
-{
-    it("Success Get Single Users", async function()
-    {
+describe("Get Single User", function(){
+    it("Success Get Single Users", async function(){
         const id = request
         .get("/api/users/2")
        
@@ -40,10 +34,8 @@ describe("Get Single User", function()
     })
 })
 
-describe("Single User Not Found", function()
-{
-    it("Success Show Notif Single Users Not Found", async function()
-    {
+describe("Single User Not Found", function(){
+    it("Success Show Notif Single Users Not Found", async function(){
         const id = request
         .get("/api/users/2")
        
@@ -52,10 +44,8 @@ describe("Single User Not Found", function()
     })
 })
 
-describe("Put User Update", function()
-{
-    it("Success Update", async function()
-    {
+describe("Put User Update", function(){
+    it("Success Update", async function(){
         const response = await request
         .put("/api/users/2")
         .send({
